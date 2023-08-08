@@ -10,7 +10,7 @@ export default function ExpenseForm(props) {
     e.preventDefault();
     const data = {
       title: title,
-      amount: Number(amount),
+      amount: +Number(amount),
       date: new Date(date),
     };
     props.onSaveData(data);
