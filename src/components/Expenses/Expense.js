@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import ExpenseItem from './ExpenseItem';
 import './Expense.css';
 import ExpensesFilter from './ExpensesFilter';
+import ExpensesChart from './ExpensesChart';
 
 export default function Expense(props) {
 let [datas,setDatas]=useState(props.exp);
@@ -18,7 +19,9 @@ setDatas(data)}
   return (
     <div className='expenses'>
       <ExpensesFilter selectedYear={selectedYear} />
+      <ExpensesChart datas={datas}/>
       {datas.length===0 ? <p>No Data </p>:<ExpenseItem datas={datas}/>}
+    
     </div>
   )
 }
